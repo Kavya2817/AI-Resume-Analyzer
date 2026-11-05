@@ -1,0 +1,317 @@
+
+.rb-root {
+  --ink: #1d2733;
+  --muted: #5b6672;
+  --line: #d7dde3;
+  --accent: #0f5c6e;
+  --bg: #eef1f4;
+
+  display: grid;
+  grid-template-columns: minmax(300px, 420px) 1fr;
+  gap: 24px;
+  padding: 24px;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.rb-root *,
+.rb-root *::before,
+.rb-root *::after {
+  box-sizing: border-box;
+}
+
+/* Editor */
+.rb-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rb-heading {
+  font-size: 1.4rem;
+  margin: 0 0 4px;
+}
+
+.rb-card {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rb-card legend {
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+.rb-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Input text: dark and readable */
+.rb-card input[type="text"],
+.rb-card input:not([type]),
+.rb-card input:not([type="checkbox"]),
+.rb-card textarea {
+  font: inherit;
+  color: #111111;
+  -webkit-text-fill-color: #111111;
+  opacity: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Placeholder text stays grey */
+.rb-card input::placeholder,
+.rb-card textarea::placeholder {
+  color: #999999;
+  -webkit-text-fill-color: #999999;
+  opacity: 1;
+}
+
+.rb-card textarea {
+  resize: vertical;
+}
+
+.rb-card input:focus-visible,
+.rb-card textarea:focus-visible,
+.rb-root button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Section controls */
+.rb-section-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.rb-section-title-input {
+  flex: 1 1 140px;
+  font-weight: 600 !important;
+}
+
+.rb-check {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+}
+
+.rb-check input[type="checkbox"] {
+  width: auto;
+  accent-color: var(--accent);
+}
+
+.rb-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+
+.rb-entry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* Buttons */
+.rb-icon-btn,
+.rb-link-btn {
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 5px 9px;
+  color: var(--ink);
+}
+
+.rb-link-btn {
+  align-self: flex-start;
+  border-color: transparent;
+  color: var(--accent);
+  padding: 4px 0;
+}
+
+.rb-icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rb-danger {
+  color: #a3281f;
+}
+
+.rb-primary {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 18px;
+}
+
+.rb-primary:hover {
+  background: #0b4857;
+}
+
+/* Resume preview */
+.rb-preview-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.rb-preview {
+  width: 100%;
+  max-width: 794px;
+  min-height: 1000px;
+  background: #fff;
+  padding: 48px 52px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #111111;
+}
+
+.rb-resume-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.rb-name {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #111111;
+}
+
+.rb-contacts {
+  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 28px;
+  font-size: 0.85rem;
+}
+
+.rb-contacts a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rb-contacts a:hover {
+  text-decoration: underline;
+}
+
+.rb-resume-section {
+  margin-top: 16px;
+}
+
+.rb-resume-section h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 3px;
+}
+
+.rb-resume-entry {
+  margin-bottom: 8px;
+}
+
+.rb-entry-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rb-entry-head span {
+  color: #444;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.rb-resume-entry p {
+  margin: 2px 0;
+}
+
+.rb-resume-entry ul {
+  margin: 3px 0 0;
+  padding-left: 20px;
+}
+
+/* PDF download */
+.rb-download {
+  text-align: center;
+}
+
+.rb-download p {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .rb-root {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .rb-preview {
+    padding: 28px 22px;
+  }
+}
+
+/* Printing: only the resume appears */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .rb-root {
+    display: block;
+    padding: 0;
+    background: #fff;
+  }
+
+  .rb-preview-wrap {
+    display: block;
+  }
+
+  .rb-preview {
+    box-shadow: none;
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+  }
+
+  @page {
+    margin: 14mm;
+  }
+}
